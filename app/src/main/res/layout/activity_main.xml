@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.feicui.contacts.activity.MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@color/colorTitle"
+            android:gravity="center"
+            android:text="@string/title_main"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_h1_size"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/lv_phoneType"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"></ListView>
+
+    </LinearLayout>
+
+    <include layout="@layout/loading" />
+</RelativeLayout>
