@@ -26,6 +26,11 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".activity.PhoneNumberActivity"></activity>
+
+        <provider
+            android:authorities="com.feicui.contacts"
+            android:exported="true"
+            android:name=".contentprovider.MyContentProvider"/>
     </application>
 
 </manifest>
