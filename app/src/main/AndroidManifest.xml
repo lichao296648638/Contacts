@@ -3,6 +3,20 @@
     package="com.feicui.contacts">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <permission
+        android:name="com.feicui.contacts.permission.READ"
+        android:label="Read provider permission"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="com.feicui.contacts.permission.READ_PHONE_TYPE"
+        android:label="Read phone type"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="com.feicui.contacts.permission.READ_PHONE_NUMBER"
+        android:label="Read phone number"
+        android:protectionLevel="normal" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,9 +42,19 @@
         <activity android:name=".activity.PhoneNumberActivity"></activity>
 
         <provider
+            android:name=".contentprovider.MyContentProvider"
             android:authorities="com.feicui.contacts"
-            android:exported="true"
-            android:name=".contentprovider.MyContentProvider"/>
+            android:readPermission="com.feicui.contacts.permission.READ"
+            android:exported="true" >
+            <path-permission
+                android:pathPrefix="/PhoneType"
+                android:readPermission="com.feicui.contacts.permission.READ_PHONE_TYPE"
+                />
+            <path-permission
+                android:pathPrefix="/Catering"
+                android:readPermission="com.feicui.contacts.permission.READ_PHONE_NUMBER"
+                />
+        </provider>
     </application>
 
 </manifest>

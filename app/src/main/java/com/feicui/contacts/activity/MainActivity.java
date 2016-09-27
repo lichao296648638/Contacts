@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.provider.MediaStore;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,7 +29,6 @@ import java.util.ArrayList;
  * 通讯大全主页
  */
 public class MainActivity extends BaseActivity {
-
 
     //电话类型列表
     ListView lv_phoneType;
@@ -119,6 +119,7 @@ public class MainActivity extends BaseActivity {
                 //用来启动新界面的intent
                 Intent intent;
                 //判断从数据库中获取到的TypeName是什么字符
+                if(entities.get(position).getSubTable() != null)
                 switch (entities.get(position).getSubTable()) {
                     case TypeEntry.SUB_LOCAL: //本地服务
                         //隐式启动拨号界面
