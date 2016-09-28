@@ -54,6 +54,7 @@
                 android:pathPrefix="/Catering"
                 android:readPermission="com.feicui.contacts.permission.READ_PHONE_NUMBER"
                 />
+            <grant-uri-permission android:pathPrefix="/Catering" />
         </provider>
     </application>
 
